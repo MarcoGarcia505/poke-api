@@ -3,6 +3,7 @@ import { Module } from '@nestjs/common';
 import { PokemonModule } from './pokemon/pokemon.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { MongooseModule } from '@nestjs/mongoose';
+import { CommonModule } from './common/common.module';
 
 @Module({
   imports: [
@@ -11,7 +12,8 @@ import { MongooseModule } from '@nestjs/mongoose';
     }),
     // Create connection with mongo -> first install mongosModule created by the team of nest js
     MongooseModule.forRoot('mongodb://localhost:27017/nest-pokemon'),
-    PokemonModule
+    PokemonModule,
+    CommonModule
   ],
   controllers: [],
   providers: [],
